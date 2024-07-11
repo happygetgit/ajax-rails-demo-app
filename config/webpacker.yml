@@ -49,6 +49,7 @@ default: &default
 
 development:
   <<: *default
+  mode: development
   compile: true
 
   # Reference: https://webpack.js.org/configuration/dev-server/
@@ -67,10 +68,9 @@ development:
     quiet: false
     pretty: false
     headers:
-      'Access-Control-Allow-Origin': '*'
+      "Access-Control-Allow-Origin": "*"
     watch_options:
-      ignored: '**/node_modules/**'
-
+      ignored: "**/node_modules/**"
 
 test:
   <<: *default
@@ -81,6 +81,7 @@ test:
 
 production:
   <<: *default
+  mode: production
 
   # Production depends on precompilation of packs prior to booting for performance.
   compile: false
